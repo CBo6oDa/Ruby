@@ -1,22 +1,24 @@
-<h1>Main page</h1>
+<h1>Головна сторінка</h1>
 <table class="table">
     <thead>
         <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Title</th>
-        <th scope="col">Body</th>
-        <th scope="col">Comments</th>
+        <th scope="col">Назва</th>
+        <th scope="col">Опис</th>
         <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
     <% @post.each do |post| %>
         <tr>
-        <td><%= post.id %></td>
-        <td><%= post.title %></td>
-        <td><%= post.body %></td>
-        <td><%= post.comments %></td>
-        <td><%= link_to "Read", post_path(post), :class => 'btn btn-info' %></td>
+        <td><strong><%= post.title %></strong></td>
+        <td>
+            <% if post.body.length < 600 %>
+                <%= post.body %>
+            <% else %> 
+                <%= post.body[0...450] %> ...
+            <% end %>
+        </td>
+        <td><%= link_to "Детальніше...", post_path(post), :class => 'btn btn-info' %></td>
         </tr>
     <% end %>
     </tbody>
