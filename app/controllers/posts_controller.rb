@@ -2,6 +2,7 @@ class PostsController < ApplicationController
     # http_basic_authenticate_with name: "admin", password:"qwerty", except: [:index, :show]
     def index
         @posts = Post.all
+        @comments = Comment.all
     end
     def new
         @post = Post.new
@@ -24,6 +25,8 @@ class PostsController < ApplicationController
     end
     def show
         @post = Post.find(params[:id])
+        @comments = Comment.all
+        
     end
     def create
         @post = Post.new(post_params)

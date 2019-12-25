@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
         redirect_to post_path(@post)
     end
     private def comment_params
-        params.require(:comment).permit(:username, :body)
+        params.require(:comment).permit(:post_id, :username, :body)
     end
     def index
         @comments = Comment.all
