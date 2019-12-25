@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-    http_basic_authenticate_with name: "admin", password: "admin"
+    http_basic_authenticate_with name: "Admin", password: "Admin"
     def new
       @comment =Post.new
     end
