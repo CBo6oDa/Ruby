@@ -15,7 +15,7 @@
             <% if post.body.length < 600 %>
                 <%= post.body %>
             <% else %> 
-                <%= post.body[0...450] %> ...
+                <%= post.body[0...450] %> <%= link_to "...", post_path(post) %>
             <% end %>
         </td>
         <td><%= link_to "Детальніше...", post_path(post), :class => 'btn btn-info' %></td>
