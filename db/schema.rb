@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 2019_12_07_185049) do
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index "\"post_id\"", name: "index_posts_on_post_id"
   end
 
   add_foreign_key "comments", "posts"
